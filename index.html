@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nisharg Nargund - Research Portfolio</title>
-    <!-- Website Icon -->
+    <meta name="description" content="Explore the research portfolio of Nisharg Nargund, an AI researcher and founder of OpenRAG. Discover publications on 1-bit LLMs, machine learning, and work at the intersection of academic research and entrepreneurial innovation.">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232d3748'%3E%3C/rect%3E%3Ctext x='50' y='55' font-family='Inter, sans-serif' font-size='50' fill='white' text-anchor='middle' font-weight='bold'%3ENN%3C/text%3E%3C/svg%3E">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,11 +21,36 @@
             font-size: 1.875rem;
             font-weight: 700;
         }
+        .award-status {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px; /* rounded-full */
+            background-color: #FEF3C7; /* yellow-100 */
+            color: #92400E; /* yellow-800 */
+            font-weight: 600; /* font-semibold */
+            font-size: 0.75rem; /* text-xs */
+            animation: pulse 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
+        }
+        .award-status svg {
+            margin-right: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.05);
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- Header & Navigation -->
     <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-gray-900">Nisharg Nargund</a>
@@ -43,7 +68,6 @@
                 </svg>
             </button>
         </nav>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
             <a href="#about" class="block py-2 text-gray-600 hover:text-blue-600">About</a>
             <a href="#experience" class="block py-2 text-gray-600 hover:text-blue-600">Experience</a>
@@ -56,7 +80,6 @@
 
     <main class="container mx-auto px-6 py-12">
 
-        <!-- About Section -->
         <section id="about" class="mb-24">
              <div class="flex flex-col md:flex-row items-center justify-center py-12">
                 <div class="flex-shrink-0 mb-8 md:mb-0 md:mr-12">
@@ -85,7 +108,6 @@
             </div>
         </section>
 
-        <!-- Experience Section -->
         <section id="experience" class="mb-24">
             <h2 class="section-title">Professional Experience</h2>
             <div class="space-y-8 border-l-4 border-blue-500 pl-8">
@@ -93,7 +115,7 @@
                     <div class="absolute -left-10 h-full flex items-center">
                         <div class="h-4 w-4 bg-blue-500 rounded-full"></div>
                     </div>
-                    <h3 class="text-xl font-bold">Researcher — International Institute of Information Technology (IIIT), Hyderabad, India</h3>
+                    <h3 class="text-xl font-bold">International Institute of Information Technology (IIIT), Hyderabad, India</h3>
                     <p class="text-sm text-gray-500 mb-2">May 2025 - July 2025</p>
                     <ul class="list-disc pl-5 text-gray-600 space-y-1">
                         <li>Developed and analyzed 1-Bit Large Language Models from scratch and experimenting in a resource constrainted nature.</li>
@@ -116,7 +138,6 @@
             </div>
         </section>
 
-        <!-- Entrepreneurial Ventures Section -->
         <section id="ventures" class="mb-24">
             <h2 class="section-title">From Research to Reality: Entrepreneurial Ventures</h2>
             <div class="bg-white rounded-lg shadow-lg overflow-hidden">
@@ -130,68 +151,88 @@
                         Beyond building products, I am passionate about creating a symbiotic relationship between commercial innovation and academic rigor. OpenRAG actively contributes to the scientific community by sponsoring and serving as an official AI partner for leading international conferences, including:
                     </p>
                     <ul class="list-disc pl-5 text-gray-700 space-y-2 mb-6">
-                        <li><b>ICMEET 2025 - London, UK:</b> International Conference on Micro-Electronics, Electromagnetics and Telecommunications</li>
-                        <li><b>ICDECT 2025 - Bhubaneswar, India:</b> International Conference on Data Engineering and Communication Technology</li>
+                        <li><b>ICMEET 2025:</b> International Conference on Machine Learning and Engineering Technology.</li>
+                        <li><b>ICDECT 2025:</b> International Conference on Data Engineering and Communication Technology.</li>
                     </ul>
                     <a href="https://openrag.in" target="_blank" class="inline-block bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300 self-start">Explore OpenRAG &rarr;</a>
                 </div>
             </div>
         </section>
 
-        <!-- Research Papers Section -->
         <section id="papers" class="mb-24">
             <h2 class="section-title">Research Papers</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Paper 1 -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-xl font-bold mb-2">Advancements in Computer Vision and Machine Learning for Food Quality Evaluation: A Comprehensive Review for the Food Industry</h3>
-                    <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-green-600">Published</span></p>
-                    <a href="https://www.researchgate.net/publication/373144829_Advancements_in_Computer_Vision_and_Machine" target="_blank" class="text-blue-600 hover:underline">Read Paper &rarr;</a>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-bold mb-2">Advancements in Computer Vision and Machine Learning for Food Quality Evaluation: A Comprehensive Review for the Food Industry</h3>
+                        <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-green-600">Published</span></p>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <a href="https://www.researchgate.net/publication/373144829_Advancements_in_Computer_Vision_and_Machine" target="_blank" class="text-blue-600 hover:underline">Read Paper &rarr;</a>
+                        <span class="award-status">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" clip-rule="evenodd" />
+                            </svg>
+                            Best Paper Award
+                        </span>
+                    </div>
                 </div>
-                <!-- Paper 2 -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-xl font-bold mb-2">Deep Learning in Industry 4.0: Transforming Manufacturing through Data-Driven Innovation</h3>
-                    <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-green-600">Published</span></p>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-bold mb-2">Deep Learning in Industry 4.0: Transforming Manufacturing through Data-Driven Innovation</h3>
+                        <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-green-600">Published</span></p>
+                    </div>
                     <a href="https://www.springerprofessional.de/en/deep-learning-in-industry-4-0-transforming-manufacturing-through/26592118" target="_blank" class="text-blue-600 hover:underline">Read Paper &rarr;</a>
                 </div>
-                <!-- Paper 3 -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-xl font-bold mb-2">Innovative Fusion of LSTM and Bi-GRU Networks for Enhanced Hate Speech Detection in Social Media</h3>
-                    <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-green-600">Published</span></p>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-bold mb-2">Innovative Fusion of LSTM and Bi-GRU Networks for Enhanced Hate Speech Detection in Social Media</h3>
+                        <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-green-600">Published</span></p>
+                    </div>
                     <a href="https://www.researchgate.net/publication/387456177_Innovative_Fusion_of_LSTM_and_Bi-GRU_Network" target="_blank" class="text-blue-600 hover:underline">Read Paper &rarr;</a>
                 </div>
-                <!-- Paper 4 -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-xl font-bold mb-2">Conversational Text Extraction with Large Language Models Using Retrieval-Augmented Systems</h3>
-                    <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-green-600">Published</span></p>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-bold mb-2">Conversational Text Extraction with Large Language Models Using Retrieval-Augmented Systems</h3>
+                        <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-green-600">Published</span></p>
+                    </div>
                     <a href="https://arxiv.org/abs/2501.09801" target="_blank" class="text-blue-600 hover:underline">Read Paper &rarr;</a>
                 </div>
-                 <!-- Paper 5 -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-xl font-bold mb-2">A Transformer-Based Model for Enhanced Tokenization and Generation in Hindi Natural Language Processing</h3>
-                    <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-green-600">Published</span></p>
-                    <a href="#" class="text-gray-400 cursor-not-allowed">Link TBA</a>
+                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-bold mb-2">A Transformer-Based Model for Enhanced Tokenization and Generation in Hindi Natural Language Processing</h3>
+                        <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-green-600">Published</span></p>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <a href="#" class="text-gray-400 cursor-not-allowed">Link TBA</a>
+                        <span class="award-status">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" clip-rule="evenodd" />
+                            </svg>
+                            Best Paper Award
+                        </span>
+                    </div>
                 </div>
-                <!-- Paper 6 -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-xl font-bold mb-2">Neural Orchestration for Multi-Agent Systems: A Deep Learning Framework for Optimal Agent Selection</h3>
-                    <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-yellow-600">Accepted</span></p>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-bold mb-2">Neural Orchestration for Multi-Agent Systems: A Deep Learning Framework for Optimal Agent Selection</h3>
+                        <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-yellow-600">Accepted</span></p>
+                    </div>
                     <a href="https://arxiv.org/abs/2505.02861" target="_blank" class="text-blue-600 hover:underline">Read Paper &rarr;</a>
                 </div>
-                <!-- Paper 7 -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-xl font-bold mb-2">Optimization of Latent-Space Compression using Game-Theoretic Techniques for Transformer-Based Vector Search</h3>
-                    <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-blue-600">ArXiv Preprint</span></p>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-bold mb-2">Optimization of Latent-Space Compression using Game-Theoretic Techniques for Transformer-Based Vector Search</h3>
+                        <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-blue-600">ArXiv Preprint</span></p>
+                    </div>
                     <a href="https://arxiv.org/abs/2508.18877" target="_blank" class="text-blue-600 hover:underline">Read Paper &rarr;</a>
                 </div>
             </div>
         </section>
 
-        <!-- Articles Section -->
         <section id="articles" class="mb-24">
             <h2 class="section-title">Articles</h2>
             <div class="space-y-8">
-                <!-- 2024 Articles -->
                 <div>
                     <h3 class="text-2xl font-bold mb-4 text-gray-600">2024</h3>
                     <div class="border-l-4 border-blue-500 pl-6 space-y-6">
@@ -222,8 +263,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- 2023 Articles -->
-                 <div>
+                <div>
                     <h3 class="text-2xl font-bold mb-4 text-gray-600">2023</h3>
                     <div class="border-l-4 border-blue-500 pl-6 space-y-6">
                         <div class="bg-white p-4 rounded-r-lg shadow-sm">
@@ -261,7 +301,6 @@
             </div>
         </section>
 
-        <!-- Book Section -->
         <section id="book" class="mb-24">
              <h2 class="section-title">Authored Book</h2>
              <div class="bg-white rounded-lg shadow-lg overflow-hidden md:flex">
@@ -278,7 +317,6 @@
                      <p class="text-gray-500 mb-4">Available on: Amazon, Kindle, Flipkart</p>
                     <a href="https://amzn.in/d/fc1qjHa" target="_blank" class="inline-block bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300 self-start">Get The Book</a>
                 </div>
-                <!-- Book cover image -->
                 <div class="md:w-1/3">
                     <img src="images/book.png" alt="Book cover for Fundamentals of Convolutional Neural Networks with Tensorflow" class="object-cover w-full h-full">
                 </div>
@@ -287,7 +325,6 @@
 
     </main>
 
-    <!-- Footer -->
     <footer class="bg-white border-t mt-12">
         <div class="container mx-auto px-6 py-4 text-center text-gray-500">
             &copy; 2025 Nisharg Nargund. All Rights Reserved.
@@ -313,5 +350,4 @@
 
 </body>
 </html>
-
 
