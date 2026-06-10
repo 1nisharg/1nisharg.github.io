@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nisharg Nargund - Research Portfolio</title>
-    <meta name="description" content="Explore the research portfolio of Nisharg Nargund, an AI researcher and founder of OpenRAG. Discover publications on 1-bit LLMs, machine learning, and work at the intersection of academic research and entrepreneurial innovation.">
+    <title>Nisarg Nargund - AI Researcher & Founder</title>
+    <meta name="description" content="Nisarg Nargund — AI researcher, founder of OpenRAG Innovations, and published author. Working on efficient LLM inference, quantization, and production-grade RAG systems.">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232d3748'%3E%3C/rect%3E%3Ctext x='50' y='55' font-family='Inter, sans-serif' font-size='50' fill='white' text-anchor='middle' font-weight='bold'%3ENN%3C/text%3E%3C/svg%3E">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display.swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
+        body { font-family: 'Inter', sans-serif; }
+
         .section-title {
             border-bottom: 2px solid #e5e7eb;
             padding-bottom: 0.5rem;
@@ -21,242 +20,456 @@
             font-size: 1.875rem;
             font-weight: 700;
         }
-        .award-status {
+
+        /* Award badge — pulsing gold */
+        .award-badge {
             display: inline-flex;
             align-items: center;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px; /* rounded-full */
-            background-color: #FEF3C7; /* yellow-100 */
-            color: #92400E; /* yellow-800 */
-            font-weight: 600; /* font-semibold */
-            font-size: 0.75rem; /* text-xs */
+            gap: 0.25rem;
+            padding: 0.2rem 0.65rem;
+            border-radius: 9999px;
+            background-color: #FEF3C7;
+            color: #92400E;
+            font-weight: 600;
+            font-size: 0.7rem;
             animation: pulse 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
         }
-        .award-status svg {
-            margin-right: 0.25rem;
-            width: 1rem;
-            height: 1rem;
+
+        /* Venue badge — subtle pill */
+        .venue-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.2rem 0.65rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.7rem;
         }
+        .venue-ieee   { background-color: #DBEAFE; color: #1E40AF; }
+        .venue-acm    { background-color: #FCE7F3; color: #9D174D; }
+        .venue-springer { background-color: #D1FAE5; color: #065F46; }
+        .venue-arxiv  { background-color: #EDE9FE; color: #5B21B6; }
+        .venue-irjmets { background-color: #F3F4F6; color: #374151; }
+
+        /* Featured paper card */
+        .paper-featured {
+            border: 2px solid #3B82F6;
+            background: linear-gradient(135deg, #EFF6FF 0%, #ffffff 60%);
+            position: relative;
+        }
+        .featured-pin {
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            background: #2563EB;
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.2rem 0.7rem;
+            border-radius: 0 0.5rem 0 0.5rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* Traction chips */
+        .traction-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: #F0FDF4;
+            border: 1px solid #BBF7D0;
+            color: #166534;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.3rem 0.75rem;
+            border-radius: 9999px;
+        }
+
+        /* PhD badge */
+        .phd-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #EFF6FF;
+            border: 1px solid #BFDBFE;
+            color: #1D4ED8;
+            font-size: 0.78rem;
+            font-weight: 500;
+            padding: 0.35rem 0.9rem;
+            border-radius: 9999px;
+        }
+
+        /* Coming soon book card */
+        .book-coming-soon {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e40af 100%);
+        }
+
         @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 0.8;
-                transform: scale(1.05);
-            }
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50%       { opacity: 0.85; transform: scale(1.04); }
+        }
+
+        /* Scroll fade-in */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
+    <!-- ── NAV ── -->
     <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-gray-900">Nisharg Nargund</a>
+            <a href="#" class="text-2xl font-bold text-gray-900">Nisarg Nargund</a>
             <div class="hidden md:flex space-x-8">
-                <a href="#about" class="text-gray-600 hover:text-blue-600 transition duration-300">About</a>
+                <a href="#about"      class="text-gray-600 hover:text-blue-600 transition duration-300">About</a>
                 <a href="#experience" class="text-gray-600 hover:text-blue-600 transition duration-300">Experience</a>
-                <a href="#ventures" class="text-gray-600 hover:text-blue-600 transition duration-300">Ventures</a>
-                <a href="#papers" class="text-gray-600 hover:text-blue-600 transition duration-300">Papers</a>
-                <a href="#articles" class="text-gray-600 hover:text-blue-600 transition duration-300">Articles</a>
-                <a href="#book" class="text-gray-600 hover:text-blue-600 transition duration-300">Book</a>
+                <a href="#ventures"   class="text-gray-600 hover:text-blue-600 transition duration-300">Ventures</a>
+                <a href="#papers"     class="text-gray-600 hover:text-blue-600 transition duration-300">Papers</a>
+                <a href="#articles"   class="text-gray-600 hover:text-blue-600 transition duration-300">Articles</a>
+                <a href="#book"       class="text-gray-600 hover:text-blue-600 transition duration-300">Books</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden text-gray-800">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
                 </svg>
             </button>
         </nav>
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-            <a href="#about" class="block py-2 text-gray-600 hover:text-blue-600">About</a>
+            <a href="#about"      class="block py-2 text-gray-600 hover:text-blue-600">About</a>
             <a href="#experience" class="block py-2 text-gray-600 hover:text-blue-600">Experience</a>
-            <a href="#ventures" class="block py-2 text-gray-600 hover:text-blue-600">Ventures</a>
-            <a href="#papers" class="block py-2 text-gray-600 hover:text-blue-600">Papers</a>
-            <a href="#articles" class="block py-2 text-gray-600 hover:text-blue-600">Articles</a>
-            <a href="#book" class="block py-2 text-gray-600 hover:text-blue-600">Book</a>
+            <a href="#ventures"   class="block py-2 text-gray-600 hover:text-blue-600">Ventures</a>
+            <a href="#papers"     class="block py-2 text-gray-600 hover:text-blue-600">Papers</a>
+            <a href="#articles"   class="block py-2 text-gray-600 hover:text-blue-600">Articles</a>
+            <a href="#book"       class="block py-2 text-gray-600 hover:text-blue-600">Books</a>
         </div>
     </header>
 
     <main class="container mx-auto px-6 py-12">
 
-        <section id="about" class="mb-24">
-             <div class="flex flex-col md:flex-row items-center justify-center py-12">
+        <!-- ── ABOUT ── -->
+        <section id="about" class="mb-24 fade-in">
+            <div class="flex flex-col md:flex-row items-center justify-center py-12">
                 <div class="flex-shrink-0 mb-8 md:mb-0 md:mr-12">
-                    <img src="images\nisharg_passport.jpg" alt="Nisharg Nargund" class="w-48 h-48 rounded-full shadow-lg object-cover">
+                    <img src="images/nisharg_passport.jpg" alt="Nisarg Nargund"
+                         class="w-48 h-48 rounded-full shadow-lg object-cover">
                 </div>
                 <div class="text-center md:text-left">
-                    <h1 class="text-5xl font-bold mb-4">Nisharg Nargund</h1>
-                    <p class="text-xl text-gray-600 max-w-2xl">
-                        I design AI that learns efficiently, reasons clearly, and scales intelligently. Also an explorer of how intelligence can be compressed from 1-bit LLMs to real-world AI systems that reason efficiently.
+                    <h1 class="text-5xl font-bold mb-4">Nisarg Nargund</h1>
+
+                    <!-- CHANGE 4 — tighter, founder-first bio -->
+                    <p class="text-xl text-gray-600 max-w-2xl mb-4">
+                        Founder of <a href="https://openrag.in" target="_blank" class="text-blue-600 font-semibold hover:underline">OpenRAG Innovations</a> and published researcher (IJCNN 2026, IEEE, ACM, Springer).
+                        I build production AI infrastructure — from efficient LLM inference and quantization
+                        to RAG systems that work reliably in the real world.
                     </p>
-                     <div class="flex justify-center md:justify-start space-x-6 mt-6">
-                        <a href="mailto:nisarg.nargund@gmail.com" class="text-gray-500 hover:text-blue-600 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
+
+                    <!-- CHANGE 7 — PhD seeking badge -->
+                    <div class="flex justify-center md:justify-start mb-5">
+                        <span class="phd-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422A12.083 12.083 0 0121 13c0 5.523-4.477 10-9 10S3 18.523 3 13c0-.638.072-1.26.207-1.858L12 14z"/>
+                            </svg>
+                            Currently seeking MS Research / PhD positions in efficient AI &amp; LLM systems
+                        </span>
+                    </div>
+
+                    <!-- Social icons -->
+                    <div class="flex justify-center md:justify-start space-x-6">
+                        <a href="mailto:nisarg.nargund@gmail.com" class="text-gray-500 hover:text-blue-600 transition-colors" title="Email">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
                         </a>
-                         <a href="https://www.linkedin.com/in/nisharg-nargund" target="_blank" class="text-gray-500 hover:text-blue-600 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        <a href="https://www.linkedin.com/in/nisharg-nargund" target="_blank" class="text-gray-500 hover:text-blue-600 transition-colors" title="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
                         </a>
-                        <a href="https://scholar.google.com/citations?user=cKr3rlsAAAAJ&hl=en" target="_blank" class="text-gray-500 hover:text-blue-600 transition-colors">
-                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7.5 7.5 0 0 1-5.13-12.98l-3.2-3.2L5.1 6.4l3.2 3.2A7.5 7.5 0 0 1 12 24zM5.13 6.4L12 13.28 18.87 6.4 17.45 5 12 10.45 6.55 5 5.13 6.4z"/></svg>
+                        <a href="https://scholar.google.com/citations?user=cKr3rlsAAAAJ&hl=en" target="_blank" class="text-gray-500 hover:text-blue-600 transition-colors" title="Google Scholar">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 24a7.5 7.5 0 0 1-5.13-12.98l-3.2-3.2L5.1 6.4l3.2 3.2A7.5 7.5 0 0 1 12 24zM5.13 6.4L12 13.28 18.87 6.4 17.45 5 12 10.45 6.55 5 5.13 6.4z"/>
+                            </svg>
                         </a>
-                        <a href="https://x.com/NargundNis27973" target="_blank" class="text-gray-500 hover:text-blue-600 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        <a href="https://x.com/NargundNis27973" target="_blank" class="text-gray-500 hover:text-blue-600 transition-colors" title="X / Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="experience" class="mb-24">
+        <!-- ── EXPERIENCE ── -->
+        <section id="experience" class="mb-24 fade-in">
             <h2 class="section-title">Professional Experience</h2>
             <div class="space-y-8 border-l-4 border-blue-500 pl-8">
                 <div class="relative">
-                    <div class="absolute -left-10 h-full flex items-center">
-                        <div class="h-4 w-4 bg-blue-500 rounded-full"></div>
-                    </div>
+                    <div class="absolute -left-10 top-1 h-4 w-4 bg-blue-500 rounded-full"></div>
                     <h3 class="text-xl font-bold">Researcher — International Institute of Information Technology (IIIT), Hyderabad, India</h3>
-                    <p class="text-sm text-gray-500 mb-2">May 2025 - July 2025</p>
+                    <p class="text-sm text-gray-500 mb-2">May 2025 – July 2025</p>
                     <ul class="list-disc pl-5 text-gray-600 space-y-1">
-                        <li>Developed and analyzed 1-Bit Large Language Models from scratch and experimenting in a resource constrainted nature.</li>
-                        <li>Worked over the Edge computing layer while clustering the developed LLM with T4 and H100 GPUs.</li>
-                        <li>Analyzed the DeepSeek-V3 architecture from scratch and their approach to innovation and tech-stack.</li>
+                        <li>Implemented BitNet (1-bit LLM) from scratch; evaluated performance under resource-constrained inference on T4 and H100 GPUs.</li>
+                        <li>Conducted an in-depth architectural analysis of DeepSeek-V3, studying its MoE design, expert routing, and training efficiency innovations.</li>
+                        <li>Explored edge computing deployment strategies for low-precision LLMs, informing subsequent quantization research (TernaryLM, IJCNN 2026).</li>
                     </ul>
                 </div>
                 <div class="relative">
-                     <div class="absolute -left-10 h-full flex items-center">
-                        <div class="h-4 w-4 bg-blue-500 rounded-full"></div>
-                    </div>
+                    <div class="absolute -left-10 top-1 h-4 w-4 bg-blue-500 rounded-full"></div>
                     <h3 class="text-xl font-bold">Generative AI Engineer — Dubai-based Tech Company (Remote)</h3>
-                    <p class="text-sm text-gray-500 mb-2">Aug 2025 - Sept 2025</p>
+                    <p class="text-sm text-gray-500 mb-2">Aug 2025 – Sept 2025</p>
                     <ul class="list-disc pl-5 text-gray-600 space-y-1">
                         <li>Built scalable GenAI applications including custom RAG chatbots and LLM pipelines for global clients.</li>
                         <li>Optimized prompt engineering and model outputs to reduce hallucinations and improve multilingual support.</li>
-                        <li>Contributed to production-grade solutions used across education and enterprise domains.</li>
+                        <li>Contributed to production-grade solutions across education and enterprise domains.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section id="ventures" class="mb-24">
+        <!-- ── VENTURES — CHANGE 2: traction numbers front and centre ── -->
+        <section id="ventures" class="mb-24 fade-in">
             <h2 class="section-title">From Research to Reality: Entrepreneurial Ventures</h2>
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
                 <div class="p-8">
-                    <h3 class="text-3xl font-bold mb-3">Founder, OpenRAG Innovations Pvt. Ltd.</h3>
-                    <p class="text-gray-600 mb-4">
-                        I believe the true impact of research is measured by its real-world application. This conviction led me to found OpenRAG, a venture dedicated to solving the critical challenge of trust and reliability in modern AI. We are engineering a proprietary 'Corrective Context Engine' (CCE) to eliminate LLM hallucinations and make AI systems verifiably accurate for high-stakes fields like education, law, and enterprise.
+                    <!-- Header row -->
+                    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
+                        <div>
+                            <h3 class="text-3xl font-bold mb-1">OpenRAG Innovations Pvt. Ltd.</h3>
+                            <p class="text-blue-600 font-semibold">Founder &amp; Technical Lead</p>
+                        </div>
+                        <!-- CHANGE 2 — traction chips -->
+                        <div class="flex flex-wrap gap-2">
+                            <span class="traction-chip">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2h5"/><circle cx="12" cy="7" r="4"/></svg>
+                                2,600+ Users
+                            </span>
+                            <span class="traction-chip">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                2 B2B Clients
+                            </span>
+                            <span class="traction-chip">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/></svg>
+                                Bangalore · India
+                            </span>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-600 mb-3">
+                        <span class="font-semibold text-gray-800">OpenRAG is the AI trust layer that verifies outputs before delivery</span> —
+                        making LLMs decision-safe for regulated and high-stakes use cases.
                     </p>
-                    <h4 class="text-xl font-semibold mt-6 mb-2">Bridging Industry and Academia</h4>
-                    <p class="text-gray-600 mb-4">
-                        Beyond building products, I am passionate about creating a symbiotic relationship between commercial innovation and academic rigor. OpenRAG actively contributes to the real world by building Trustworthy AI and also to the scientific community by sponsoring and serving as an official AI partner for leading international conferences, including:
+                    <p class="text-gray-600 mb-3">
+                        Everyone is deploying AI today — but almost no one is measuring how correct those responses are,
+                        or how defensible they are when reputational risk is on the line. OpenRAG solves that.
+                        Our system lets you query your own data (Excel, DOCX, PDF) through a
+                        <span class="font-semibold text-gray-800">persona selection layer</span> built for Fintech and Edtech —
+                        so you get role-calibrated, context-aware responses instead of the generic outputs every LLM serves by default.
                     </p>
-                    <ul class="list-disc pl-5 text-gray-700 space-y-2 mb-6">
-                        <li><b>ICMEET 2025 London, UK :</b> International Conference on Machine Learning and Engineering Technology.</li>
-                        <li><b>ICDECT 2025 Bhubaneswar, India:</b> International Conference on Data Engineering and Communication Technology.</li>
-                    </ul>
-                    <a href="https://openrag.in" target="_blank" class="inline-block bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300 self-start">Explore OpenRAG &rarr;</a>
+                    <p class="text-gray-600 mb-6">
+                        Before any response reaches the user, our system
+                        <span class="font-semibold text-gray-800">verifies and scores the output pre-delivery</span> —
+                        a step almost all companies skip entirely or perform after the fact.
+                        DocDynamo isn't a Q&amp;A tool. It's a <span class="font-semibold text-gray-800">decision support system
+                        that delivers only trusted, persona-backed outputs</span> — giving enterprises a defensible,
+                        auditable AI layer they can actually stand behind.
+                    </p>
+
+                    <!-- Products grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <div class="bg-blue-50 rounded-lg p-4 border border-blue-100">
+                            <h4 class="font-bold text-blue-900 mb-1">DocDynamo</h4>
+                            <p class="text-sm text-blue-700">Multi-agentic backend with a proprietary hallucination removal and verification layer that sits between human and AI. 2,600+ beta users. 2 active B2B contracts.</p>
+                        </div>
+                        <div class="bg-indigo-50 rounded-lg p-4 border border-indigo-100">
+                            <h4 class="font-bold text-indigo-900 mb-1">Conference Partnerships</h4>
+                            <p class="text-sm text-indigo-700">Official AI partner — ICMEET 2025 (London) and ICDECT 2025 (Bhubaneswar).</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-4">
+                        <a href="https://openrag.in" target="_blank"
+                           class="inline-block bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                            Explore OpenRAG &rarr;
+                        </a>
+                        <p class="text-xs text-gray-400">
+                            <span class="font-semibold text-gray-500">CIN:</span> U58201OD2025PTC050816 &nbsp;·&nbsp;
+                            <span class="font-semibold text-gray-500">Incorporated:</span> 22 Sept 2025 &nbsp;·&nbsp;
+                            <span class="font-semibold text-gray-500">MCA Registered</span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="papers" class="mb-24">
+        <!-- ── PAPERS — CHANGES 1, 5, 6 ── -->
+        <section id="papers" class="mb-24 fade-in">
             <h2 class="section-title">Research Papers</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
-                    <div class="flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Advancements in Computer Vision and Machine Learning for Food Quality Evaluation: A Comprehensive Review for the Food Industry</h3>
-                        <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-green-600">Published</span></p>
+
+                <!-- CHANGE 1 — TernaryLM FEATURED card (top/pinned) -->
+                <div class="paper-featured bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col relative">
+                    <div class="featured-pin">★ Featured · IJCNN 2026</div>
+                    <div class="flex-grow pt-4">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="venue-badge venue-ieee">IEEE · IJCNN 2026</span>
+                            <span class="venue-badge venue-arxiv">📍 Maastricht, Netherlands</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">TernaryLM: Memory-Efficient Language Modeling via Native 1.5-Bit Quantization with Adaptive Layer-wise Scaling</h3>
+                        <p class="text-sm text-gray-500 mb-1">Status: <span class="font-semibold text-green-600">Accepted · Camera Ready</span></p>
+                        <p class="text-sm text-gray-500 mb-4">International Joint Conference on Neural Networks, Maastricht, Netherlands, 2026</p>
+                        <p class="text-xs text-gray-400 italic mb-4">Demonstrates native 1.5-bit quantization with per-layer precision scaling — enabling competitive LLM performance at extreme memory compression for edge deployment.</p>
                     </div>
                     <div class="flex justify-between items-center">
-                        <a href="https://www.researchgate.net/publication/373144829_Advancements_in_Computer_Vision_and_Machine" target="_blank" class="text-blue-600 hover:underline">Read Paper &rarr;</a>
-                        <span class="award-status">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" clip-rule="evenodd" />
-                            </svg>
-                            Best Paper Award
-                        </span>
+                        <a href="#" class="text-gray-400 cursor-not-allowed text-sm">Proceedings link TBA</a>
                     </div>
                 </div>
+
+                <!-- CHANGE 5 — Latent-Space Compression (was missing) -->
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
                     <div class="flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Deep Learning in Industry 4.0: Transforming Manufacturing through Data-Driven Innovation</h3>
-                        <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-green-600">Published</span></p>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="venue-badge venue-springer">Springer · ICDCIT 2026</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Optimization of Latent-Space Compression using Game-Theoretic Techniques for Transformer-Based Vector Search</h3>
+                        <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-green-600">Accepted</span></p>
                     </div>
-                    <a href="https://www.springerprofessional.de/en/deep-learning-in-industry-4-0-transforming-manufacturing-through/26592118" target="_blank" class="text-blue-600 hover:underline">Read Paper &rarr;</a>
+                    <a href="https://arxiv.org/abs/2508.18877" target="_blank" class="text-blue-600 hover:underline text-sm">Read on arXiv &rarr;</a>
                 </div>
+
+                <!-- Hindi NLP — Best Paper -->
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
                     <div class="flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Innovative Fusion of LSTM and Bi-GRU Networks for Enhanced Hate Speech Detection in Social Media</h3>
-                        <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-green-600">Published</span></p>
-                    </div>
-                    <a href="https://www.researchgate.net/publication/387456177_Innovative_Fusion_of_LSTM_and_Bi-GRU_Network" target="_blank" class="text-blue-600 hover:underline">Read Paper &rarr;</a>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
-                    <div class="flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Conversational Text Extraction with Large Language Models Using Retrieval-Augmented Systems</h3>
-                        <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-green-600">Published</span></p>
-                    </div>
-                    <a href="https://arxiv.org/abs/2501.09801" target="_blank" class="text-blue-600 hover:underline">Read Paper &rarr;</a>
-                </div>
-                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
-                    <div class="flex-grow">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="venue-badge venue-springer">Springer · FICTA 2025</span>
+                            <span class="venue-badge" style="background:#FEF3C7;color:#92400E;">📍 London, UK</span>
+                        </div>
                         <h3 class="text-xl font-bold mb-2">A Transformer-Based Model for Enhanced Tokenization and Generation in Hindi Natural Language Processing</h3>
                         <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-green-600">Presented (Pending Publication)</span></p>
                     </div>
                     <div class="flex justify-between items-center">
-                        <a href="#" class="text-gray-400 cursor-not-allowed">Link TBA</a>
-                        <span class="award-status">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" clip-rule="evenodd" />
+                        <a href="#" class="text-gray-400 cursor-not-allowed text-sm">Link TBA</a>
+                        <span class="award-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" clip-rule="evenodd"/>
                             </svg>
                             Best Paper Award
                         </span>
                     </div>
                 </div>
+
+                <!-- Neural Orchestration -->
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
                     <div class="flex-grow">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="venue-badge venue-springer">Springer · PReMI 2025</span>
+                            <span class="venue-badge venue-ieee" style="background:#DBEAFE;color:#1E40AF;">📍 IIT Delhi</span>
+                        </div>
                         <h3 class="text-xl font-bold mb-2">Neural Orchestration for Multi-Agent Systems: A Deep Learning Framework for Optimal Agent Selection</h3>
                         <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-yellow-600">Presented (Pending Publication)</span></p>
                     </div>
-                    <a href="https://arxiv.org/abs/2505.02861" target="_blank" class="text-blue-600 hover:underline">Read Paper &rarr;</a>
+                    <a href="https://arxiv.org/abs/2505.02861" target="_blank" class="text-blue-600 hover:underline text-sm">Read on arXiv &rarr;</a>
                 </div>
+
+                <!-- MCP -->
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
                     <div class="flex-grow">
-                        <h3 class="text-xl font-bold mb-2">
-                            Model Context Protocol (MCP): A Lightweight, Modular Framework for Tool-Augmented LLM Agents
-                        </h3>
-                        <p class="text-sm text-gray-500 mb-4">
-                            Status: <span class="font-semibold text-yellow-600">Accepted (Camera Ready)</span>
-                        </p>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="venue-badge venue-ieee">IEEE · ISED 2025</span>
+                            <span class="venue-badge venue-ieee" style="background:#DBEAFE;color:#1E40AF;">📍 NIT Raipur</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Model Context Protocol (MCP): A Lightweight, Modular Framework for Tool-Augmented LLM Agents</h3>
+                        <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-yellow-600">Accepted (Camera Ready)</span></p>
                     </div>
-                    <a href="#" class="text-gray-400 cursor-not-allowed">
-                        Link TBA
-                    </a>
+                    <a href="#" class="text-gray-400 cursor-not-allowed text-sm">Link TBA</a>
                 </div>
+
+                <!-- Chalkboards to Chatbots -->
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
                     <div class="flex-grow">
-                        <h3 class="text-xl font-bold mb-2">
-                            From Chalkboards to Chatbots: Exploring Teacher and Student Readiness for Agentic AI in Indian Schools
-                        </h3>
-                        <p class="text-sm text-gray-500 mb-4">
-                            Status: <span class="font-semibold text-yellow-600">Presented (Pending Publication)</span>
-                        </p>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="venue-badge venue-acm">ACM · COMPUTE 2025</span>
+                            <span class="venue-badge venue-acm" style="background:#FCE7F3;color:#9D174D;">📍 IIT Ropar</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">From Chalkboards to Chatbots: Exploring Teacher and Student Readiness for Agentic AI in Indian Schools</h3>
+                        <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-yellow-600">Presented (Pending Publication)</span></p>
                     </div>
-                    <a href="#" class="text-gray-400 cursor-not-allowed">
-                        Link TBA
-                    </a>
+                    <a href="#" class="text-gray-400 cursor-not-allowed text-sm">Link TBA</a>
                 </div>
+
+                <!-- RAG Text Extraction -->
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
                     <div class="flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Optimization of Latent-Space Compression using Game-Theoretic Techniques for Transformer-Based Vector Search</h3>
-                        <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-yellow-600">Accepted</span></p>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="venue-badge venue-ieee">IEEE · CINE 2024</span>
+                            <span class="venue-badge venue-ieee" style="background:#DBEAFE;color:#1E40AF;">📍 KIIT University</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Conversational Text Extraction with Large Language Models Using Retrieval-Augmented Systems</h3>
+                        <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-green-600">Published</span></p>
                     </div>
-                    <a href="https://arxiv.org/abs/2508.18877" target="_blank" class="text-blue-600 hover:underline">Read Paper &rarr;</a>
+                    <a href="https://arxiv.org/abs/2501.09801" target="_blank" class="text-blue-600 hover:underline text-sm">Read on arXiv &rarr;</a>
                 </div>
+
+                <!-- Hindi NLP / Hate Speech -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                    <div class="flex-grow">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="venue-badge venue-irjmets">IRJMETS Journal 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Innovative Fusion of LSTM and Bi-GRU Networks for Enhanced Hate Speech Detection in Social Media</h3>
+                        <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-green-600">Published</span></p>
+                    </div>
+                    <a href="https://www.researchgate.net/publication/387456177_Innovative_Fusion_of_LSTM_and_Bi-GRU_Network" target="_blank" class="text-blue-600 hover:underline text-sm">Read Paper &rarr;</a>
+                </div>
+
+                <!-- Industry 4.0 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                    <div class="flex-grow">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="venue-badge venue-springer">Springer · ICDCIT 2023</span>
+                            <span class="venue-badge venue-springer" style="background:#D1FAE5;color:#065F46;">📍 KIIT University</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Deep Learning in Industry 4.0: Transforming Manufacturing through Data-Driven Innovation</h3>
+                        <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-green-600">Published</span></p>
+                    </div>
+                    <a href="https://www.springerprofessional.de/en/deep-learning-in-industry-4-0-transforming-manufacturing-through/26592118" target="_blank" class="text-blue-600 hover:underline text-sm">Read Paper &rarr;</a>
+                </div>
+
+                <!-- Food Quality — Best Paper -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                    <div class="flex-grow">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="venue-badge venue-springer">Springer · AIIAF 2023</span>
+                            <span class="venue-badge venue-springer" style="background:#D1FAE5;color:#065F46;">📍 NIT Rourkela</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Advancements in Computer Vision and Machine Learning for Food Quality Evaluation: A Comprehensive Review for the Food Industry</h3>
+                        <p class="text-sm text-gray-500 mb-4">Status: <span class="font-semibold text-green-600">Published</span></p>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <a href="https://www.researchgate.net/publication/373144829_Advancements_in_Computer_Vision_and_Machine" target="_blank" class="text-blue-600 hover:underline text-sm">Read Paper &rarr;</a>
+                        <span class="award-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" clip-rule="evenodd"/>
+                            </svg>
+                            Best Poster Award
+                        </span>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <section id="articles" class="mb-24">
+        <!-- ── ARTICLES ── (unchanged) -->
+        <section id="articles" class="mb-24 fade-in">
             <h2 class="section-title">Articles</h2>
             <div class="space-y-8">
                 <div>
@@ -264,27 +477,27 @@
                     <div class="border-l-4 border-blue-500 pl-6 space-y-6">
                         <div class="bg-white p-4 rounded-r-lg shadow-sm">
                             <h4 class="font-semibold">Beyond Reality: Virtual Worlds Shaping the Future of Food Science</h4>
-                            <p class="text-sm text-gray-500">Food Infotech Magazine - January 2024</p>
+                            <p class="text-sm text-gray-500">Food Infotech Magazine — January 2024</p>
                             <a href="https://www.foodinfotech.com/beyond-reality-virtual-worlds-shaping-the-future-of-fo" target="_blank" class="text-blue-600 text-sm hover:underline">Read Article &rarr;</a>
                         </div>
                         <div class="bg-white p-4 rounded-r-lg shadow-sm">
                             <h4 class="font-semibold">Advancements in Food Safety and Quality Evaluation Using Computer Vision and Machine Learning</h4>
-                            <p class="text-sm text-gray-500">Food, Marketing and Technology Magazine - March 2024</p>
+                            <p class="text-sm text-gray-500">Food, Marketing and Technology Magazine — March 2024</p>
                             <a href="https://fmtmagazine.in/advancements-in-food-safety-and-quality-evaluation-using-co" target="_blank" class="text-blue-600 text-sm hover:underline">Read Article &rarr;</a>
                         </div>
-                         <div class="bg-white p-4 rounded-r-lg shadow-sm">
-                            <h4 class="font-semibold">LLM for Food: from farm to to fork</h4>
-                            <p class="text-sm text-gray-500">Food, Marketing and Technology Magazine - April 2024</p>
+                        <div class="bg-white p-4 rounded-r-lg shadow-sm">
+                            <h4 class="font-semibold">LLM for Food: from farm to fork</h4>
+                            <p class="text-sm text-gray-500">Food, Marketing and Technology Magazine — April 2024</p>
                             <a href="https://fmtmagazine.in/llm-for-food-farm-to-fork-article/" target="_blank" class="text-blue-600 text-sm hover:underline">Read Article &rarr;</a>
                         </div>
-                         <div class="bg-white p-4 rounded-r-lg shadow-sm">
+                        <div class="bg-white p-4 rounded-r-lg shadow-sm">
                             <h4 class="font-semibold">Implementing the Technological Intelligence in Agricultural Produce</h4>
-                            <p class="text-sm text-gray-500">Food, Marketing and Technology Magazine - June 2024</p>
+                            <p class="text-sm text-gray-500">Food, Marketing and Technology Magazine — June 2024</p>
                             <a href="https://fmtmagazine.in/implementing-the-technological-intelligence-in-agricultural-pr" target="_blank" class="text-blue-600 text-sm hover:underline">Read Article &rarr;</a>
                         </div>
-                         <div class="bg-white p-4 rounded-r-lg shadow-sm">
+                        <div class="bg-white p-4 rounded-r-lg shadow-sm">
                             <h4 class="font-semibold">Edible and Biodegradable Packaging Innovations</h4>
-                            <p class="text-sm text-gray-500">Food, Marketing and Technology Magazine - December 2024</p>
+                            <p class="text-sm text-gray-500">Food, Marketing and Technology Magazine — December 2024</p>
                             <a href="https://fmtmagazine.in/edible-and-biodegradable-packaging-innovations/" target="_blank" class="text-blue-600 text-sm hover:underline">Read Article &rarr;</a>
                         </div>
                     </div>
@@ -293,33 +506,33 @@
                     <h3 class="text-2xl font-bold mb-4 text-gray-600">2023</h3>
                     <div class="border-l-4 border-blue-500 pl-6 space-y-6">
                         <div class="bg-white p-4 rounded-r-lg shadow-sm">
-                            <h4 class="font-semibold">Two Layer Classifiers of MVS for Effective Grading, Safety & Quality Evaluation in Food Industry</h4>
-                            <p class="text-sm text-gray-500">Food Infotech Magazine - April 2023</p>
+                            <h4 class="font-semibold">Two Layer Classifiers of MVS for Effective Grading, Safety &amp; Quality Evaluation in Food Industry</h4>
+                            <p class="text-sm text-gray-500">Food Infotech Magazine — April 2023</p>
                             <a href="https://www.researchgate.net/publication/372884397_Two_Layer_Classifiers_of_MVS" target="_blank" class="text-blue-600 text-sm hover:underline">Read Article &rarr;</a>
                         </div>
                         <div class="bg-white p-4 rounded-r-lg shadow-sm">
                             <h4 class="font-semibold">Crunching the number of safer foods: how big data is transforming food safety</h4>
-                            <p class="text-sm text-gray-500">Food Infotech Magazine - May 2023</p>
+                            <p class="text-sm text-gray-500">Food Infotech Magazine — May 2023</p>
                             <a href="https://www.foodinfotech.com/how-big-data-is-playing-a-vital-role-in-transforming-f" target="_blank" class="text-blue-600 text-sm hover:underline">Read Article &rarr;</a>
                         </div>
                         <div class="bg-white p-4 rounded-r-lg shadow-sm">
-                            <h4 class="font-semibold">Cracking the Code! Unveiling the Hidden World of Food Safety with MicroWaves & ML</h4>
-                            <p class="text-sm text-gray-500">Food Infotech Magazine - June 2023</p>
+                            <h4 class="font-semibold">Cracking the Code! Unveiling the Hidden World of Food Safety with MicroWaves &amp; ML</h4>
+                            <p class="text-sm text-gray-500">Food Infotech Magazine — June 2023</p>
                             <a href="https://www.researchgate.net/publication/372884695_Cracking_the_Code_Unveiling_t" target="_blank" class="text-blue-600 text-sm hover:underline">Read Article &rarr;</a>
                         </div>
                         <div class="bg-white p-4 rounded-r-lg shadow-sm">
                             <h4 class="font-semibold">Revolutionizing Agri-Food Supply Chain: Harnessing the Power of IoT</h4>
-                            <p class="text-sm text-gray-500">Food Infotech Magazine - July 2023</p>
+                            <p class="text-sm text-gray-500">Food Infotech Magazine — July 2023</p>
                             <a href="https://www.foodinfotech.com/revolutionizing-agri-food-supply-chain-harnessing-the" target="_blank" class="text-blue-600 text-sm hover:underline">Read Article &rarr;</a>
                         </div>
                         <div class="bg-white p-4 rounded-r-lg shadow-sm">
                             <h4 class="font-semibold">Revolutionizing Food Safety: How BlockChain and Lighting Network are changing the game</h4>
-                            <p class="text-sm text-gray-500">Food Infotech Magazine - September 2023</p>
+                            <p class="text-sm text-gray-500">Food Infotech Magazine — September 2023</p>
                             <a href="https://www.researchgate.net/publication/374639858_Revolutionizing_Food_Safety_H" target="_blank" class="text-blue-600 text-sm hover:underline">Read Article &rarr;</a>
                         </div>
-                         <div class="bg-white p-4 rounded-r-lg shadow-sm">
+                        <div class="bg-white p-4 rounded-r-lg shadow-sm">
                             <h4 class="font-semibold">Revolutionizing Brain Tumor Detection: The CNN-based Medical Imaging Breakthrough</h4>
-                            <p class="text-sm text-gray-500">Informs London Magazine - December 2023</p>
+                            <p class="text-sm text-gray-500">Informs London Magazine — December 2023</p>
                             <a href="https://pubsonline.informs.org/do/10.1287/orms.2023.04.03/full/" target="_blank" class="text-blue-600 text-sm hover:underline">Read Article &rarr;</a>
                         </div>
                     </div>
@@ -327,25 +540,75 @@
             </div>
         </section>
 
-        <section id="book" class="mb-24">
-             <h2 class="section-title">Authored Book</h2>
-             <div class="bg-white rounded-lg shadow-lg overflow-hidden md:flex">
-                <div class="md:w-2/3 p-8 flex flex-col justify-center">
-                    <h3 class="text-3xl font-bold mb-3">Fundamentals of Convolutional Neural Networks with Tensorflow</h3>
-                    <p class="text-gray-600 mb-4">A deep dive into Computer Vision, Object Detection, AI, CNNs, and Tensorflow.</p>
-                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">Computer Vision</span>
-                        <span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">Object Detection</span>
-                        <span class="bg-yellow-100 text-yellow-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">AI</span>
-                         <span class="bg-purple-100 text-purple-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">CNN</span>
-                         <span class="bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">Tensorflow</span>
+        <!-- ── BOOKS — CHANGE 3: second book added ── -->
+        <section id="book" class="mb-24 fade-in">
+            <h2 class="section-title">Authored Books</h2>
+            <div class="space-y-8">
+
+                <!-- Book 1 — existing CNN book -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden md:flex border border-gray-100">
+                    <div class="md:w-2/3 p-8 flex flex-col justify-center">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs font-bold bg-green-100 text-green-800 px-2.5 py-1 rounded-full">Available Now</span>
+                            <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2.5 py-1 rounded-full">⭐ Top 10 TensorFlow Books 2025 — BookAuthority</span>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-3">Fundamentals of Convolutional Neural Networks with TensorFlow</h3>
+                        <p class="text-gray-600 mb-4">A deep dive into Computer Vision, Object Detection, AI, CNNs, and TensorFlow.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Computer Vision</span>
+                            <span class="bg-green-100 text-green-800 text-sm font-medium px-2.5 py-0.5 rounded">Object Detection</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-2.5 py-0.5 rounded">AI</span>
+                            <span class="bg-purple-100 text-purple-800 text-sm font-medium px-2.5 py-0.5 rounded">CNN</span>
+                            <span class="bg-red-100 text-red-800 text-sm font-medium px-2.5 py-0.5 rounded">TensorFlow</span>
+                        </div>
+                        <p class="text-gray-500 mb-4 text-sm">Available on: Amazon, Kindle, Flipkart</p>
+                        <a href="https://amzn.in/d/fc1qjHa" target="_blank"
+                           class="inline-block bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300 self-start">
+                            Get The Book
+                        </a>
                     </div>
-                     <p class="text-gray-500 mb-4">Available on: Amazon, Kindle, Flipkart</p>
-                    <a href="https://amzn.in/d/fc1qjHa" target="_blank" class="inline-block bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300 self-start">Get The Book</a>
+                    <div class="md:w-1/3">
+                        <img src="images/book.png" alt="Fundamentals of CNNs with TensorFlow"
+                             class="object-cover w-full h-full">
+                    </div>
                 </div>
-                <div class="md:w-1/3">
-                    <img src="images/book.png" alt="Book cover for Fundamentals of Convolutional Neural Networks with Tensorflow" class="object-cover w-full h-full">
+
+                <!-- CHANGE 3 — Book 2: Trust in the Age of Agentic AI Economy -->
+                <div class="book-coming-soon rounded-xl shadow-lg overflow-hidden md:flex">
+                    <div class="md:w-2/3 p-8 flex flex-col justify-center">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs font-bold bg-yellow-300 text-yellow-900 px-2.5 py-1 rounded-full">Coming Soon · 2026</span>
+                            <span class="text-xs font-semibold text-blue-200 bg-blue-900/40 px-2.5 py-1 rounded-full">Amazon KDP</span>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-3 text-white">Trust in the Age of Agentic AI Economy</h3>
+                        <p class="text-blue-200 mb-4">
+                            A C-suite guide to building trustworthy, reliable agentic AI systems at scale.
+                            Drawn from the infrastructure OpenRAG Innovations has built in production — covering
+                            hallucination mitigation, retrieval reliability, multi-agent coordination, and the
+                            emerging trust frameworks enterprises need as AI systems become autonomous decision-makers.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-blue-800/60 text-blue-200 text-sm font-medium px-2.5 py-0.5 rounded">Agentic AI</span>
+                            <span class="bg-blue-800/60 text-blue-200 text-sm font-medium px-2.5 py-0.5 rounded">LLM Infrastructure</span>
+                            <span class="bg-blue-800/60 text-blue-200 text-sm font-medium px-2.5 py-0.5 rounded">RAG Systems</span>
+                            <span class="bg-blue-800/60 text-blue-200 text-sm font-medium px-2.5 py-0.5 rounded">AI Trust &amp; Safety</span>
+                        </div>
+                        <p class="text-blue-300 text-sm mb-4">Co-authored under OpenRAG Innovations Pvt. Ltd. · Available on Amazon KDP</p>
+                        <span class="inline-block bg-white/10 border border-white/30 text-white font-semibold px-8 py-3 rounded-lg self-start cursor-default">
+                            Notify Me on Launch (coming soon)
+                        </span>
+                    </div>
+                    <div class="md:w-1/3 flex items-center justify-center p-8">
+                        <div class="w-40 h-52 bg-white/10 border-2 border-white/30 rounded-lg flex items-center justify-center text-center p-4">
+                            <div>
+                                <div class="text-4xl mb-2">🤖</div>
+                                <p class="text-white text-xs font-semibold leading-tight">Trust in the Age of Agentic AI Economy</p>
+                                <p class="text-blue-300 text-xs mt-2">Nisarg Nargund</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </section>
 
@@ -353,33 +616,24 @@
 
     <footer class="bg-white border-t mt-12">
         <div class="container mx-auto px-6 py-4 text-center text-gray-500">
-            &copy; 2025 Nisharg Nargund. All Rights Reserved.
+            &copy; 2026 Nisarg Nargund. All Rights Reserved.
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
+        // Mobile menu
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when a link is clicked
-        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
-        for (let link of mobileMenuLinks) {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
+        mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        for (let link of mobileMenu.getElementsByTagName('a')) {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
         }
-    </script>
 
+        // Scroll fade-in
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
