@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-
         .section-title {
             border-bottom: 2px solid #e5e7eb;
             padding-bottom: 0.5rem;
@@ -20,7 +19,6 @@
             font-size: 1.875rem;
             font-weight: 700;
         }
-
         /* Award badge — pulsing gold */
         .award-badge {
             display: inline-flex;
@@ -34,7 +32,6 @@
             font-size: 0.7rem;
             animation: pulse 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
         }
-
         /* Venue badge — subtle pill */
         .venue-badge {
             display: inline-flex;
@@ -50,7 +47,6 @@
         .venue-springer { background-color: #D1FAE5; color: #065F46; }
         .venue-arxiv  { background-color: #EDE9FE; color: #5B21B6; }
         .venue-irjmets { background-color: #F3F4F6; color: #374151; }
-
         /* Featured paper card */
         .paper-featured {
             border: 2px solid #3B82F6;
@@ -70,7 +66,6 @@
             letter-spacing: 0.05em;
             text-transform: uppercase;
         }
-
         /* Traction chips */
         .traction-chip {
             display: inline-flex;
@@ -84,7 +79,6 @@
             padding: 0.3rem 0.75rem;
             border-radius: 9999px;
         }
-
         /* PhD badge */
         .phd-badge {
             display: inline-flex;
@@ -98,17 +92,14 @@
             padding: 0.35rem 0.9rem;
             border-radius: 9999px;
         }
-
         /* Coming soon book card */
         .book-coming-soon {
             background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e40af 100%);
         }
-
         @keyframes pulse {
             0%, 100% { opacity: 1; transform: scale(1); }
             50%       { opacity: 0.85; transform: scale(1.04); }
         }
-
         /* Scroll fade-in */
         .fade-in {
             opacity: 0;
@@ -119,10 +110,64 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* Project cards */
+        .project-card {
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            border: 1px solid #f1f5f9;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .project-card:hover {
+            box-shadow: 0 12px 24px -8px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+        .project-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 9999px;
+            background: #1e3a8a;
+            color: white;
+            font-weight: 700;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+        .tech-tag {
+            display: inline-block;
+            background: #F1F5F9;
+            color: #334155;
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 0.2rem 0.6rem;
+            border-radius: 0.35rem;
+        }
+        /* Medium blog cards */
+        .blog-card {
+            background: white;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card:hover {
+            box-shadow: 0 12px 24px -8px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+        .blog-card img {
+            width: 100%;
+            height: 9rem;
+            object-fit: cover;
+            background: #e2e8f0;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-
     <!-- ── NAV ── -->
     <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -131,8 +176,10 @@
                 <a href="#about"      class="text-gray-600 hover:text-blue-600 transition duration-300">About</a>
                 <a href="#experience" class="text-gray-600 hover:text-blue-600 transition duration-300">Experience</a>
                 <a href="#ventures"   class="text-gray-600 hover:text-blue-600 transition duration-300">Ventures</a>
+                <a href="#projects"   class="text-gray-600 hover:text-blue-600 transition duration-300">Projects</a>
                 <a href="#papers"     class="text-gray-600 hover:text-blue-600 transition duration-300">Papers</a>
                 <a href="#articles"   class="text-gray-600 hover:text-blue-600 transition duration-300">Articles</a>
+                <a href="#blog"       class="text-gray-600 hover:text-blue-600 transition duration-300">Blog</a>
                 <a href="#book"       class="text-gray-600 hover:text-blue-600 transition duration-300">Books</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden text-gray-800">
@@ -145,14 +192,14 @@
             <a href="#about"      class="block py-2 text-gray-600 hover:text-blue-600">About</a>
             <a href="#experience" class="block py-2 text-gray-600 hover:text-blue-600">Experience</a>
             <a href="#ventures"   class="block py-2 text-gray-600 hover:text-blue-600">Ventures</a>
+            <a href="#projects"   class="block py-2 text-gray-600 hover:text-blue-600">Projects</a>
             <a href="#papers"     class="block py-2 text-gray-600 hover:text-blue-600">Papers</a>
             <a href="#articles"   class="block py-2 text-gray-600 hover:text-blue-600">Articles</a>
+            <a href="#blog"       class="block py-2 text-gray-600 hover:text-blue-600">Blog</a>
             <a href="#book"       class="block py-2 text-gray-600 hover:text-blue-600">Books</a>
         </div>
     </header>
-
     <main class="container mx-auto px-6 py-12">
-
         <!-- ── ABOUT ── -->
         <section id="about" class="mb-24 fade-in">
             <div class="flex flex-col md:flex-row items-center justify-center py-12">
@@ -162,14 +209,12 @@
                 </div>
                 <div class="text-center md:text-left">
                     <h1 class="text-5xl font-bold mb-4">Nisarg Nargund</h1>
-
                     <!-- CHANGE 4 — tighter, founder-first bio -->
                     <p class="text-xl text-gray-600 max-w-2xl mb-4">
-                        Founder of <a href="https://openrag.in" target="_blank" class="text-blue-600 font-semibold hover:underline">OpenRAG Innovations</a> and published researcher (IJCNN 2026, IEEE, ACM, Springer).
+                        Founder of <a href="https://openrag.in" target="_blank" class="text-blue-600 font-semibold hover:underline">OpenRAG Innovations</a> and published researcher (IEEE, ACM, Springer, etc.).
                         I build production AI infrastructure - from efficient LLM inference and quantization
                         to RAG systems that work reliably in the real world.
                     </p>
-
                     <!-- CHANGE 7 — PhD seeking badge -->
                     <div class="flex justify-center md:justify-start mb-5">
                         <span class="phd-badge">
@@ -180,7 +225,6 @@
                             Currently seeking MS Research / PhD positions in efficient AI &amp; LLM systems
                         </span>
                     </div>
-
                     <!-- Social icons -->
                     <div class="flex justify-center md:justify-start space-x-6">
                         <a href="mailto:nisarg.nargund@gmail.com" class="text-gray-500 hover:text-blue-600 transition-colors" title="Email">
@@ -208,7 +252,6 @@
                 </div>
             </div>
         </section>
-
         <!-- ── EXPERIENCE ── -->
         <section id="experience" class="mb-24 fade-in">
             <h2 class="section-title">Professional Experience</h2>
@@ -235,7 +278,6 @@
                 </div>
             </div>
         </section>
-
         <!-- ── VENTURES — CHANGE 2: traction numbers front and centre ── -->
         <section id="ventures" class="mb-24 fade-in">
             <h2 class="section-title">From Research to Reality: Entrepreneurial Ventures</h2>
@@ -263,7 +305,6 @@
                             </span>
                         </div>
                     </div>
-
                     <p class="text-gray-600 mb-3">
                         <span class="font-semibold text-gray-800">OpenRAG is the AI trust layer that verifies outputs before delivery</span> —
                         making LLMs decision-safe for regulated and high-stakes use cases.
@@ -283,7 +324,6 @@
                         that delivers only trusted, persona-backed outputs</span> — giving enterprises a defensible,
                         auditable AI layer they can actually stand behind.
                     </p>
-
                     <!-- Products grid -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                         <div class="bg-blue-50 rounded-lg p-4 border border-blue-100">
@@ -295,7 +335,6 @@
                             <p class="text-sm text-indigo-700">Official AI partner — ICMEET 2025 (London) and ICDECT 2025 (Bhubaneswar).</p>
                         </div>
                     </div>
-
                     <div class="flex flex-wrap items-center gap-4">
                         <a href="https://openrag.in" target="_blank"
                            class="inline-block bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">
@@ -310,19 +349,146 @@
                 </div>
             </div>
         </section>
-
+        <!-- ── PROJECTS ── -->
+        <section id="projects" class="mb-24 fade-in">
+            <h2 class="section-title">Projects</h2>
+            <div class="space-y-6">
+                <!-- Project 1 — TernaryLM -->
+                <div class="project-card p-7">
+                    <div class="flex items-start gap-4 mb-3">
+                        <span class="project-number">1</span>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-center gap-2 mb-1">
+                                <h3 class="text-xl font-bold">TernaryLM</h3>
+                                <span class="venue-badge venue-arxiv">Research · Under Submission</span>
+                            </div>
+                            <p class="text-sm text-gray-500">Native ternary-weight language modeling, inspired by the BitNet paradigm</p>
+                        </div>
+                    </div>
+                    <ul class="list-disc pl-5 text-gray-600 space-y-1.5 mb-4 ml-14">
+                        <li>Designed and implemented a language model architecture using native ternary weights {-1, 0, +1}, inspired by the BitNet paradigm.</li>
+                        <li>Built custom BitLinear layers, transformer blocks, training infrastructure, and quantization-aware components rather than simply applying post-training quantization.</li>
+                        <li>Developed experiments around a 132M-parameter model, evaluating language modeling and downstream paraphrase detection performance.</li>
+                        <li>Investigated the fundamental trade-offs between model memory, computational efficiency, quantization, and quality for resource-constrained inference.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5 mb-4 ml-14">
+                        <span class="tech-tag">BitLinear</span>
+                        <span class="tech-tag">Ternary Quantization</span>
+                        <span class="tech-tag">Transformers</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">Edge Inference</span>
+                    </div>
+                    <a href="https://huggingface.co/OpenRAG128/TernaryLM" target="_blank" class="ml-14 text-blue-600 hover:underline text-sm font-medium">View on Hugging Face &rarr;</a>
+                </div>
+                <!-- Project 2 — Voice AI Agent -->
+                <div class="project-card p-7">
+                    <div class="flex items-start gap-4 mb-3">
+                        <span class="project-number">2</span>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold">Voice AI Agent</h3>
+                            <p class="text-sm text-gray-500">Real-time conversational voice system for production phone calls</p>
+                        </div>
+                    </div>
+                    <ul class="list-disc pl-5 text-gray-600 space-y-1.5 mb-4 ml-14">
+                        <li>Built a production-style real-time voice agent capable of handling phone conversations through speech recognition, LLM reasoning, and neural text-to-speech.</li>
+                        <li>Integrated Twilio, WebSockets, STT/TTS services, LiveKit-style real-time infrastructure, and FastAPI to create a low-latency conversational pipeline.</li>
+                        <li>Implemented streaming audio, call handoffs, interruption handling, session management, and debugging across the entire telephony/audio stack.</li>
+                        <li>Built versions using multiple voice providers, demonstrating the ability to reason about latency, audio formats, streaming, and vendor abstraction.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5 ml-14">
+                        <span class="tech-tag">Twilio</span>
+                        <span class="tech-tag">WebSockets</span>
+                        <span class="tech-tag">STT / TTS</span>
+                        <span class="tech-tag">LiveKit</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Streaming Audio</span>
+                    </div>
+                </div>
+                <!-- Project 3 — GTM Automation Platform -->
+                <div class="project-card p-7">
+                    <div class="flex items-start gap-4 mb-3">
+                        <span class="project-number">3</span>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold">GTM Automation Platform</h3>
+                            <p class="text-sm text-gray-500">AI-powered sales infrastructure for prospecting and outreach at scale</p>
+                        </div>
+                    </div>
+                    <ul class="list-disc pl-5 text-gray-600 space-y-1.5 mb-4 ml-14">
+                        <li>Built an end-to-end AI-powered GTM automation platform for identifying, enriching, scoring, and contacting business prospects.</li>
+                        <li>Engineered pipelines combining company discovery, website scraping, LinkedIn intelligence, Apollo organization search, Hunter domain discovery, and automated enrichment enabling AI-based voice calling outreach to different parts of the world for lead generation.</li>
+                        <li>Designed the system around FastAPI, PostgreSQL/Supabase, Docker, asynchronous pipelines, state management, and modular enrichment providers.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5 ml-14">
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">PostgreSQL / Supabase</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Apollo / Hunter APIs</span>
+                        <span class="tech-tag">Async Pipelines</span>
+                        <span class="tech-tag">AI Voice Outreach</span>
+                    </div>
+                </div>
+                <!-- Project 4 — DocDynamo -->
+                <div class="project-card p-7">
+                    <div class="flex items-start gap-4 mb-3">
+                        <span class="project-number">4</span>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-center gap-2 mb-1">
+                                <h3 class="text-xl font-bold">DocDynamo</h3>
+                                <span class="traction-chip">2,600+ Users</span>
+                            </div>
+                            <p class="text-sm text-gray-500">Trustworthy RAG infrastructure — the core product of OpenRAG Innovations</p>
+                        </div>
+                    </div>
+                    <ul class="list-disc pl-5 text-gray-600 space-y-1.5 mb-4 ml-14">
+                        <li>An AI infrastructure startup product built around reliable, source-grounded generative AI, evolving from the DocDynamo document intelligence platform.</li>
+                        <li>Built a full RAG stack spanning document ingestion, retrieval, corrective context generation, web grounding, verification, trust scoring, and reliability analytics.</li>
+                        <li>The platform evolved from a PDF/YouTube research assistant into a broader de-hallucination and AI trust layer for AI applications.</li>
+                        <li>Scaled the product to thousands of users while building production APIs, vector-search pipelines, multimodal generation, and an Android/web experience.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5 mb-4 ml-14">
+                        <span class="tech-tag">RAG</span>
+                        <span class="tech-tag">Vector Search</span>
+                        <span class="tech-tag">Trust Scoring</span>
+                        <span class="tech-tag">Multimodal Generation</span>
+                        <span class="tech-tag">Android / Web</span>
+                    </div>
+                    <a href="https://openrag.in" target="_blank" class="ml-14 text-blue-600 hover:underline text-sm font-medium">Explore OpenRAG &rarr;</a>
+                </div>
+                <!-- Project 5 — ResearchGuru -->
+                <div class="project-card p-7">
+                    <div class="flex items-start gap-4 mb-3">
+                        <span class="project-number">5</span>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold">AI Research Assistant — ResearchGuru</h3>
+                            <p class="text-sm text-gray-500">A precursor to OpenRAG's document intelligence and RAG ecosystem</p>
+                        </div>
+                    </div>
+                    <ul class="list-disc pl-5 text-gray-600 space-y-1.5 mb-4 ml-14">
+                        <li>Built an AI research assistant designed to help researchers navigate technical literature, documents, and external information.</li>
+                        <li>Combined document understanding, retrieval, LLM reasoning, summarization, concept extraction, and web information discovery into a unified workflow.</li>
+                        <li>The system was designed around the practical research workflow rather than a generic chatbot, connecting papers → concepts → explanations → additional sources.</li>
+                        <li>This work became an important precursor to the broader document intelligence and RAG product ecosystem at OpenRAG.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-1.5 ml-14">
+                        <span class="tech-tag">Document Understanding</span>
+                        <span class="tech-tag">Retrieval</span>
+                        <span class="tech-tag">Summarization</span>
+                        <span class="tech-tag">Concept Extraction</span>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- ── PAPERS — CHANGES 1, 5, 6 ── -->
         <section id="papers" class="mb-24 fade-in">
             <h2 class="section-title">Research Papers</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
                 <!-- CHANGE 1 — TernaryLM FEATURED card (top/pinned) -->
                 <div class="paper-featured bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col relative">
-                    <div class="featured-pin">★ Featured · IJCNN 2026</div>
+                    <div class="featured-pin">★ Under Review</div>
                     <div class="flex-grow pt-4">
                         <div class="flex flex-wrap gap-2 mb-3">
-                            <span class="venue-badge venue-ieee">IEEE · IJCNN 2026</span>
-                            <span class="venue-badge venue-arxiv">📍 Maastricht, Netherlands</span>
+                            <span class="venue-badge venue-ieee">To be announced</span>
+                            <span class="venue-badge venue-arxiv">Under Review</span>
                         </div>
                         <h3 class="text-xl font-bold mb-2">TernaryLM: Memory-Efficient Language Modeling via Native 1.5-Bit Quantization with Adaptive Layer-wise Scaling</h3>
                         <p class="text-sm text-gray-500 mb-1">Status: <span class="font-semibold text-green-600">Accepted · Camera Ready</span></p>
@@ -333,7 +499,6 @@
                         <a href="#" class="text-gray-400 cursor-not-allowed text-sm">Proceedings link TBA</a>
                     </div>
                 </div>
-
                 <!-- CHANGE 5 — Latent-Space Compression (was missing) -->
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
                     <div class="flex-grow">
@@ -346,7 +511,6 @@
                     </div>
                     <a href="https://arxiv.org/abs/2508.18877" target="_blank" class="text-blue-600 hover:underline text-sm">Read on arXiv &rarr;</a>
                 </div>
-
                 <!-- Hindi NLP — Best Paper -->
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
                     <div class="flex-grow">
@@ -367,7 +531,6 @@
                         </span>
                     </div>
                 </div>
-
                 <!-- Neural Orchestration -->
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
                     <div class="flex-grow">
@@ -380,7 +543,6 @@
                     </div>
                     <a href="https://arxiv.org/abs/2505.02861" target="_blank" class="text-blue-600 hover:underline text-sm">Read on arXiv &rarr;</a>
                 </div>
-
                 <!-- MCP -->
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
                     <div class="flex-grow">
@@ -393,7 +555,6 @@
                     </div>
                     <a href="#" class="text-gray-400 cursor-not-allowed text-sm">Link TBA</a>
                 </div>
-
                 <!-- Chalkboards to Chatbots -->
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
                     <div class="flex-grow">
@@ -406,7 +567,6 @@
                     </div>
                     <a href="#" class="text-gray-400 cursor-not-allowed text-sm">Link TBA</a>
                 </div>
-
                 <!-- RAG Text Extraction -->
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
                     <div class="flex-grow">
@@ -419,7 +579,6 @@
                     </div>
                     <a href="https://arxiv.org/abs/2501.09801" target="_blank" class="text-blue-600 hover:underline text-sm">Read on arXiv &rarr;</a>
                 </div>
-
                 <!-- Hindi NLP / Hate Speech -->
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
                     <div class="flex-grow">
@@ -431,7 +590,6 @@
                     </div>
                     <a href="https://www.researchgate.net/publication/387456177_Innovative_Fusion_of_LSTM_and_Bi-GRU_Network" target="_blank" class="text-blue-600 hover:underline text-sm">Read Paper &rarr;</a>
                 </div>
-
                 <!-- Industry 4.0 -->
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
                     <div class="flex-grow">
@@ -444,7 +602,6 @@
                     </div>
                     <a href="https://www.springerprofessional.de/en/deep-learning-in-industry-4-0-transforming-manufacturing-through/26592118" target="_blank" class="text-blue-600 hover:underline text-sm">Read Paper &rarr;</a>
                 </div>
-
                 <!-- Food Quality — Best Paper -->
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
                     <div class="flex-grow">
@@ -465,10 +622,8 @@
                         </span>
                     </div>
                 </div>
-
             </div>
         </section>
-
         <!-- ── ARTICLES ── (unchanged) -->
         <section id="articles" class="mb-24 fade-in">
             <h2 class="section-title">Articles</h2>
@@ -540,12 +695,114 @@
                 </div>
             </div>
         </section>
-
+        <!-- ── BLOG (Medium) ── -->
+        <section id="blog" class="mb-24 fade-in">
+            <div class="flex flex-wrap items-end justify-between gap-3 mb-2">
+                <h2 class="section-title !mb-0 !border-none !pb-0">Blog — Writing on Medium</h2>
+            </div>
+            <p class="text-gray-500 mb-8 -mt-1">My side hustle and running passion for AI — deep dives, model breakdowns, and industry analysis, published regularly on Medium.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="https://medium.com/@nisarg.nargund/understanding-latency-in-multi-agentic-ai-systems-deepdive-1-7f8ad6f385b0" target="_blank" class="blog-card">
+                    <img src="https://cdn-images-1.medium.com/max/413/1*eikW9o-wy13mpF3arSfhYQ.png" alt="Understanding Latency in Multi Agentic AI Systems" loading="lazy">
+                    <div class="p-4 flex flex-col flex-grow">
+                        <p class="text-xs text-gray-400 mb-1">August 15, 2026</p>
+                        <h3 class="font-bold text-sm mb-2 leading-snug">Understanding Latency in Multi Agentic AI Systems | DeepDive #1</h3>
+                        <p class="text-xs text-gray-500 flex-grow">Model latency is only 30–40% of the total latency shown by the system.</p>
+                        <span class="text-blue-600 text-xs font-medium mt-3">Read on Medium &rarr;</span>
+                    </div>
+                </a>
+                <a href="https://medium.com/@nisarg.nargund/kimi-k3-2-8t-most-capable-model-by-moonshot-ai-10cb3ced57f8" target="_blank" class="blog-card">
+                    <img src="https://cdn-images-1.medium.com/max/630/1*ThnbQzLpcRW3TM62jmwLpw.png" alt="Kimi K3: 2.8T most capable model by Moonshot.ai" loading="lazy">
+                    <div class="p-4 flex flex-col flex-grow">
+                        <p class="text-xs text-gray-400 mb-1">July 21, 2026</p>
+                        <h3 class="font-bold text-sm mb-2 leading-snug">Kimi K3: 2.8T Most Capable Model by Moonshot.ai</h3>
+                        <p class="text-xs text-gray-500 flex-grow">Moonshot's flagship 2.8T-parameter model — novel attention and MoE design for efficiency.</p>
+                        <span class="text-blue-600 text-xs font-medium mt-3">Read on Medium &rarr;</span>
+                    </div>
+                </a>
+                <a href="https://pub.towardsai.net/the-complete-guide-to-attention-variants-in-transformers-from-scaled-dot-product-to-flash-960a3b83107e" target="_blank" class="blog-card">
+                    <img src="https://cdn-images-1.medium.com/max/789/1*4_9DlPtqLMvGQ0_zE1F4gA.png" alt="The Complete Guide to Attention Variants in Transformers" loading="lazy">
+                    <div class="p-4 flex flex-col flex-grow">
+                        <p class="text-xs text-gray-400 mb-1">June 9, 2026</p>
+                        <h3 class="font-bold text-sm mb-2 leading-snug">The Complete Guide to Attention Variants in Transformers: From Scaled Dot-Product to Flash</h3>
+                        <p class="text-xs text-gray-500 flex-grow">A comprehensive overview of transformer attention mechanisms and their evolution.</p>
+                        <span class="text-blue-600 text-xs font-medium mt-3">Read on Towards AI &rarr;</span>
+                    </div>
+                </a>
+                <a href="https://medium.com/@nisarg.nargund/the-hidden-engine-behind-fast-llm-inference-why-its-necessary-for-all-wrapper-applications-86756c2e1389" target="_blank" class="blog-card">
+                    <img src="https://cdn-images-1.medium.com/max/615/1*4ob4Bkf-LZT-tRwErvjXzA.png" alt="The Hidden Engine Behind Fast LLM Inference" loading="lazy">
+                    <div class="p-4 flex flex-col flex-grow">
+                        <p class="text-xs text-gray-400 mb-1">May 5, 2026</p>
+                        <h3 class="font-bold text-sm mb-2 leading-snug">The Hidden Engine Behind Fast LLM Inference | Why It's Necessary for All Wrapper Applications</h3>
+                        <p class="text-xs text-gray-500 flex-grow">Infrastructure optimizations powering rapid LLM responses beyond model speed alone.</p>
+                        <span class="text-blue-600 text-xs font-medium mt-3">Read on Medium &rarr;</span>
+                    </div>
+                </a>
+                <a href="https://medium.com/@nisarg.nargund/the-quiet-revolution-happening-inside-your-software-and-why-most-developers-are-already-behind-833bbbef32e0" target="_blank" class="blog-card">
+                    <img src="https://cdn-images-1.medium.com/max/2600/1*Gaj_H286hi3idwfYidAt3w.png" alt="The Quiet Revolution Happening Inside Your Software" loading="lazy">
+                    <div class="p-4 flex flex-col flex-grow">
+                        <p class="text-xs text-gray-400 mb-1">April 19, 2026</p>
+                        <h3 class="font-bold text-sm mb-2 leading-snug">The Quiet Revolution Happening Inside Your Software — and Why Most Developers Are Already Behind</h3>
+                        <p class="text-xs text-gray-500 flex-grow">How agentic AI systems are quietly reshaping software development.</p>
+                        <span class="text-blue-600 text-xs font-medium mt-3">Read on Medium &rarr;</span>
+                    </div>
+                </a>
+                <a href="https://medium.com/@nisarg.nargund/how-perplexity-ai-makes-money-on-top-of-gpt-claude-gemini-inside-the-answer-engine-business-eb730ef60b1e" target="_blank" class="blog-card">
+                    <img src="https://cdn-images-1.medium.com/max/731/1*Wa-7WQD8ygSejZGBM4I5IQ.png" alt="How Perplexity AI makes money on top of GPT, Claude, Gemini" loading="lazy">
+                    <div class="p-4 flex flex-col flex-grow">
+                        <p class="text-xs text-gray-400 mb-1">April 11, 2026</p>
+                        <h3 class="font-bold text-sm mb-2 leading-snug">How Perplexity AI Makes Money on Top of GPT, Claude, Gemini: Inside the Answer Engine Business</h3>
+                        <p class="text-xs text-gray-500 flex-grow">Analyzing a $21B startup's business model built on third-party LLMs.</p>
+                        <span class="text-blue-600 text-xs font-medium mt-3">Read on Medium &rarr;</span>
+                    </div>
+                </a>
+                <a href="https://medium.com/@nisarg.nargund/metas-tribe-v2-the-ai-that-predicts-how-your-brain-reacts-to-the-world-1765ccdc5edc" target="_blank" class="blog-card">
+                    <img src="https://cdn-images-1.medium.com/max/1024/1*ORK_fqnuJYfpMgzTp0Vugg.png" alt="Meta's TRIBE v2" loading="lazy">
+                    <div class="p-4 flex flex-col flex-grow">
+                        <p class="text-xs text-gray-400 mb-1">April 2, 2026</p>
+                        <h3 class="font-bold text-sm mb-2 leading-snug">Meta's TRIBE v2: The AI That Predicts How Your Brain Reacts to the World</h3>
+                        <p class="text-xs text-gray-500 flex-grow">A neuroscience foundation model trained on 500+ hours of fMRI data.</p>
+                        <span class="text-blue-600 text-xs font-medium mt-3">Read on Medium &rarr;</span>
+                    </div>
+                </a>
+                <a href="https://medium.com/@nisarg.nargund/kimi-k2-5-the-next-milestone-in-multimodal-and-agentic-ai-eb7ea58b478a" target="_blank" class="blog-card">
+                    <img src="https://cdn-images-1.medium.com/max/677/1*EmjCyeDj621Dj5ufJNF12w.png" alt="Kimi K2.5" loading="lazy">
+                    <div class="p-4 flex flex-col flex-grow">
+                        <p class="text-xs text-gray-400 mb-1">February 8, 2026</p>
+                        <h3 class="font-bold text-sm mb-2 leading-snug">Kimi K2.5: The Next Milestone in Multimodal and Agentic AI</h3>
+                        <p class="text-xs text-gray-500 flex-grow">Moonshot's multimodal model advancing visual understanding and agentic capability.</p>
+                        <span class="text-blue-600 text-xs font-medium mt-3">Read on Medium &rarr;</span>
+                    </div>
+                </a>
+                <a href="https://medium.com/@nisarg.nargund/why-llms-forget-long-conversations-ai-replacing-humans-narrative-9538818304d3" target="_blank" class="blog-card">
+                    <img src="https://cdn-images-1.medium.com/max/1024/1*Yoz_vtRTCkg0HsFjawodHA.png" alt="Why LLMs Forget Long Conversations" loading="lazy">
+                    <div class="p-4 flex flex-col flex-grow">
+                        <p class="text-xs text-gray-400 mb-1">January 25, 2026</p>
+                        <h3 class="font-bold text-sm mb-2 leading-snug">Why LLMs Forget Long Conversations | AI Replacing Humans Narrative</h3>
+                        <p class="text-xs text-gray-500 flex-grow">Context window limits keep LLMs from developing genuine memory, unlike human cognition.</p>
+                        <span class="text-blue-600 text-xs font-medium mt-3">Read on Medium &rarr;</span>
+                    </div>
+                </a>
+                <a href="https://medium.com/@nisarg.nargund/compression-is-easy-preserving-meaning-is-not-compressed-language-models-beginner-101-225bafb10006" target="_blank" class="blog-card">
+                    <img src="https://cdn-images-1.medium.com/max/543/1*YbFLmuSje0xxa7K9QiyXtQ.png" alt="Compression Is Easy. Preserving Meaning Is Not" loading="lazy">
+                    <div class="p-4 flex flex-col flex-grow">
+                        <p class="text-xs text-gray-400 mb-1">January 5, 2026</p>
+                        <h3 class="font-bold text-sm mb-2 leading-snug">Compression Is Easy. Preserving Meaning Is Not | Compressed Language Models — Beginner 101</h3>
+                        <p class="text-xs text-gray-500 flex-grow">Shrinking the model is the easy part. Keeping it intelligent? That's hard.</p>
+                        <span class="text-blue-600 text-xs font-medium mt-3">Read on Medium &rarr;</span>
+                    </div>
+                </a>
+            </div>
+            <div class="text-center mt-8">
+                <a href="https://medium.com/@nisarg.nargund" target="_blank" class="inline-block bg-gray-900 text-white font-semibold px-8 py-3 rounded-lg hover:bg-gray-700 transition-colors duration-300">
+                    View All Posts on Medium &rarr;
+                </a>
+            </div>
+        </section>
         <!-- ── BOOKS — CHANGE 3: second book added ── -->
         <section id="book" class="mb-24 fade-in">
             <h2 class="section-title">Authored Books</h2>
             <div class="space-y-8">
-
                 <!-- Book 1 — existing CNN book -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100" style="min-height:280px">
                     <div class="md:flex h-full">
@@ -575,7 +832,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- CHANGE 3 — Book 2: Trust in the Age of Agentic AI Economy (NOW PUBLISHED) -->
                 <div class="book-coming-soon rounded-xl shadow-lg overflow-hidden md:flex">
                     <div class="md:w-2/3 p-8 flex flex-col justify-center">
@@ -613,18 +869,14 @@
                              class="w-44 rounded-lg shadow-2xl border border-white/20">
                     </div>
                 </div>
-
             </div>
         </section>
-
     </main>
-
     <footer class="bg-white border-t mt-12">
         <div class="container mx-auto px-6 py-4 text-center text-gray-500">
             &copy; 2026 Nisarg Nargund. All Rights Reserved.
         </div>
     </footer>
-
     <script>
         // Mobile menu
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -633,7 +885,6 @@
         for (let link of mobileMenu.getElementsByTagName('a')) {
             link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
         }
-
         // Scroll fade-in
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
